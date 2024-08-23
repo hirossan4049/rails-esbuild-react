@@ -30,5 +30,6 @@ export function react_component(file, props={}) {
     console.error(e)
   ]).finally(() => {
     console.log("finary...")
+    document.getElementById('setup_script').remove()
   })
 }

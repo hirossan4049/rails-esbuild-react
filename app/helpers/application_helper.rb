@@ -6,6 +6,6 @@ module ApplicationHelper
 
     infoPath = javascript_path file
     appath = javascript_path "application"
-    "<script type='module'>import {react_component} from '#{appath}';react_component('#{infoPath}', #{props.to_json})</script>".html_safe
+    "<script type='module' id='setup_script'>import {react_component} from '#{appath}';react_component('#{infoPath}', #{props.to_json})</script>".html_safe
   end
 end
