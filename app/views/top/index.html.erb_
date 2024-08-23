@@ -1,1 +1,2 @@
+i am erb
 <%= react_component "Info", {title: "i am Info Title"} %>
