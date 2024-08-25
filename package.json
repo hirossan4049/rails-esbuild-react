@@ -2,19 +2,19 @@
   "name": "app",
   "private": true,
   "devDependencies": {
-    "@types/react": "^18.3.4",
-    "@types/react-dom": "^18.3.0",
-    "esbuild": "^0.23.1"
+    "esbuild": "^0.23.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "dependencies": {
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.41",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
     "tailwindcss": "^3.4.10"
   },
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets",
+    "_build": "esbuild app/javascript/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets",
+    "build": "node build.js",
+    "cb": "rm -rf app/assets/builds/* && yarn build",
     "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify"
   }
 }
